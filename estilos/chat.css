@@ -1,0 +1,64 @@
+/* Estilos generales del chat */
+.chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de los mensajes del chat */
+.chat-message {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    max-width: 75%;
+    line-height: 1.5;
+}
+
+/* Estilo para los mensajes enviados por el usuario */
+.chat-message.sender {
+    background: #007bff;
+    color: #fff;
+    margin-left: auto;
+    text-align: right;
+}
+
+/* Estilo para los mensajes recibidos del otro usuario */
+.chat-message.receiver {
+    background: #e9ecef;
+    color: #000;
+    text-align: left;
+}
+
+/* Estilo para la marca de tiempo de los mensajes */
+.chat-message .timestamp {
+    font-size: 0.75rem;
+    color: #888;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+/* Estilos del formulario de entrada de mensaje */
+#chat-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para el área de texto */
+#mensaje {
+    border-radius: 5px;
+    resize: none;
+}
+
+/* Estilo para el botón de enviar */
+#chat-form .btn-primary {
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+

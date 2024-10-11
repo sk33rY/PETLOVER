@@ -1,0 +1,3 @@
+<?php
+define('CLAVE_CIFRADO', 'f567c218b6e0475a84fb86f40a55f25bf567c218b6e0475a84fb86f40a55f25b');
+?>

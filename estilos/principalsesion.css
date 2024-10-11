@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --background-color: #eee4db;
+    --color-principal: rgb(218, 127, 61);
+    --color-texto: rgb(40, 39, 39);
+    --color-hover: rgb(11, 11, 11);
+    --color-titulo: rgb(0, 0, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* Encabezado */
+header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    color: var(--color-texto);
+    background-color: var(--background-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+/* Estilo para ajustar el tamaño del icono de usuario */
+.user-icon ion-icon {
+    font-size: 40px; /* Cambia este valor al tamaño que desees */
+    color: var(--color-principal); /* Ajusta el color del icono si lo deseas */
+}
+
+/* LOGO */
+header .logo {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+header .logo ion-icon {
+    font-size: 55px;
+    color: var(--color-principal);
+    margin-right: 5px;
+}
+
+header .logo span {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-titulo);
+}
+
+/* Menú opciones */
+header .menu-opciones {
+    display: flex;
+    background-color: var(--background-color);
+    height: auto;
+}
+
+header .menu-opciones ul {
+    display: flex;
+    flex-direction: row;
+}
+
+header .menu-opciones li {
+    list-style: none;
+    margin: 15px;
+}
+
+header .menu-opciones a {
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+header .menu-opciones a:hover {
+    color: var(--color-principal);
+}
+
+/* Controles usuario */
+header .controles-usuario {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    order: 1;
+}
+
+header .controles-usuario ion-icon {
+    font-size: 45px;
+    cursor: pointer;
+    color: var(--color-principal);
+}
+
+header .controles-usuario ion-icon:hover {
+    color: var(--color-hover);
+}
+
+/* Menú lateral */
+.menu-lateral {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transform: translateX(-250px);
+    transition: transform 0.5s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.menu-lateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral ul li {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s ease;
+}
+
+.menu-lateral ul li:hover {
+    background-color: #444;
+}
+
+.menu-lateral ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Menú lateral activo */
+.menu-lateral.active {
+    transform: translateX(0);
+}
+
+/* Menú desplegable (inicialmente oculto) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--background-color);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--color-texto);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+
+.show {
+    display: block; /* Mostrar el menú cuando tiene la clase "show" */
+}
+
+/* Botón de menú hamburguesa */
+header #btn-menu {
+    display: none;
+}
+
+/* Main */
+main {
+    margin-top: 80px;
+}
+
+main .seccion-1 {
+    max-width: 1280px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    background: linear-gradient(
+        180deg, rgba(190, 190, 205, 0.01), #cfc3c3
+    ),
+    url(../Imagenes/animales1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+main .seccion-1 .texto {
+    color: rgb(39, 39, 39);
+    font-size: 5.1vw;
+    font-weight: 600;
+    line-height: 4.2vw;
+    width: 40vw;
+}
+
+main .seccion-1 .titulo-principal {
+    color: var(--color-titulo);
+    font-size: 4vw;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+main .seccion-1 img {
+    width: 40vw;
+}
+
+/* Estilos para el formulario de búsqueda */
+main .seccion-1 form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Estilo del input */
+main .seccion-1 input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--color-principal);
+    border-radius: 8px;
+    font-size: 18px;
+    color: var(--color-texto);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    line-height: 12%;
+}
+
+main .seccion-1 input[type="text"]::placeholder {
+    color: #888;
+    font-style: oblique;
+}
+
+main .seccion-1 input[type="text"]:focus {
+    border-color: var(--color-hover);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del botón */
+main .seccion-1 button.btn-1 {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    align-items: center;
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+main .seccion-1 button.btn-1:hover {
+    background-color: #f8bb83;
+    transform: scale(1.05);
+}
+
+main .seccion-1 button.btn-1:focus {
+    outline: none;
+}
+
+.about {
+    padding: 80px 20px;
+    background-color: #f2e0d5;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-1, .about-2 {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+
+.about-1 h3, .about-2 h3 {
+    font-size: 2rem;
+    color: var(--color-texto);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.about-1 p, .about-2 p {
+    font-size: 1rem;
+    color: #6c6c6c;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.about-img {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.about-img img {
+    width: 110px;
+    margin-right: 20px;
+}
+
+.about-txt {
+    text-align: left;
+}
+
+.about-txt h4 {
+    font-size: 1.2rem;
+    color: var(--color-texto);
+    margin-bottom: 5px;
+}
+
+.about-txt p {
+    line-height: 10%;
+    font-size: 0.9rem;
+    color: #838288;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    header .menu-opciones {
+        display: none; /* Ocultamos las opciones del menú en pantallas pequeñas */
+    }
+
+    header #btn-menu {
+        display: block; /* Mostramos el botón del menú hamburguesa */
+        font-size: 28px;
+        margin-right: 15px; /* Ajustamos el margen para posicionar correctamente */
+    }
+
+    header .logo span {
+        font-size: 20px; /* Reducimos el tamaño del texto en pantallas pequeñas */
+    }
+
+    header .logo ion-icon {
+        font-size: 30px; /* Reducimos un poco el tamaño del icono */
+    }
+
+    /* Mantener nombre del usuario visible */
+    header .controles-usuario .user-name {
+        display: inline-block;
+        font-size: 18px;
+        color: var(--color-texto);
+    }
+
+    /* Mejoramos la disposición de los controles del usuario en móviles */
+    header .controles-usuario {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    header .logo span {
+        font-size: 18px; /* Ajustamos el tamaño aún más en pantallas pequeñas */
+    }
+}
+
+/* Ajuste para cerrar el menú al hacer clic fuera */
+body.menu-active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Capa de fondo que se mostrará detrás del menú lateral */
+}

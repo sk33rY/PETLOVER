@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root{
+    --background-color:#eee4db;
+    --color-principal:rgb(218, 127, 61);
+    --color-texto:rgb(40, 39, 39);
+    --color-hover:rgb(11, 11, 11);
+    --color-titulo:rgb(0, 0, 0);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+/*Encabezado*/
+header{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    color: var(--color-texto);
+    background-color: var(--background-color);
+    margin:0;
+    padding: 0;
+    left:0;
+}
+header .contenedor{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+
+}
+
+/*LOGO*/
+header .logo{
+    display: flex;
+    align-items: center;
+}
+header .logo ion-icon{
+    font-size: 35px;
+    color: var(--color-principal);
+    margin-right: 5px;
+}
+header .logo span{
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-titulo);
+}
+/*Menú opciones*/
+header .menu-opciones{
+
+    background-color: var(--background-color);
+    height: auto;
+}
+header .menu-opciones ul{
+
+    display: flex;
+    flex-direction: row;
+}
+header .menu-opciones li{
+    list-style: none;
+    margin: 15px;
+}
+header .menu-opciones a{
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+header .menu-opciones a:hover{
+    color: var(--color-principal);
+}
+
+/*Controles usuario*/
+header .controles-usuario{
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    order: 1;
+}
+header .controles-usuario ion-icon{
+    font-size: 25px;
+    cursor: pointer;
+    color: var(--color-principal);
+}
+header .controles-usuario ion-icon:hover{
+    color: var(--color-hover);
+}
+
+header #btn-sign-up{
+    border: none;
+    cursor: pointer;
+    width: 110px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    font-size: 15px;
+}
+header #btn-sign-up:hover{
+    background-color:#f8bb83 ;
+}
+
+header #btn-menu{
+    display: none;
+}
+
+header #home{
+    color: var(--color-principal);
+}
+
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+    .about-content {
+        flex-direction: column; /* Ajusta la dirección del flex en pantallas más pequeñas */
+    }
+
+    .about-1, .about-2 {
+        max-width: 100%; /* Ajusta el ancho máximo en pantallas pequeñas */
+    }
+}
+
+/*Responsive*/
+@media (max-width: 865px){
+
+    header #btn-menu{
+        display: block;
+    }
+    header .menu-opciones{
+        height: 0;
+  
+        overflow: hidden;
+        border-bottom: 2px solid var(--color-principal);
+        transition: height 0.5s ease;
+    }
+    header .menu-opciones.mostrar{
+        height: 280px;
+    }
+    header .menu-opciones.min{
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    header .menu-opciones ul{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width:325px){
+    header .logo ion-icon{
+        display: none;
+    }
+    header .logo span{
+        font-size: 20px;
+    }
+}
+
+
+/* Responsive Styles for Header */
+@media (max-width: 865px) {
+    header #btn-menu {
+        display: block;
+    }
+    header .menu-opciones {
+        height: 0;
+        overflow: hidden;
+        border-bottom: 2px solid var(--color-principal);
+        transition: height 0.5s ease;
+    }
+    header .menu-opciones.mostrar {
+        height: 280px;
+    }
+    header .menu-opciones.min {
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    header .menu-opciones ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 325px) {
+    header .logo ion-icon {
+        display: none;
+    }
+    header .logo span {
+        font-size: 20px;
+    }
+}
+
+/* Responsive Styles for Main Section */
+

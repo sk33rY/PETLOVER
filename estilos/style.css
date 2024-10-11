@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    background: url(../Imagenes/animales1.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #010101;
+    position: relative;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #524d4d;
+}
+
+.menu .navbar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.menu .navbar ul li a {
+    color: #5c5a5a;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #E03C40;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-label {
+    display: none;
+    cursor: pointer;
+}
+#menu-toggle {
+    display: none;
+}
+.menu-icono {
+    width: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icono .hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menu-icono .hamburger::before,
+.menu-icono .hamburger::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+.menu-icono .hamburger::before {
+    top: -8px;
+}
+
+.menu-icono .hamburger::after {
+    top: 8px;
+}
+
+.menu-icono.active .hamburger {
+    background-color: transparent;
+}
+
+.menu-icono.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-icono.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header-txt {
+    text-align: center;
+}
+
+.header-txt h1 {
+    font-size: 50px;
+}
+
+.header-txt p {
+    font-size: 30px;
+    color: #29242d;
+}
+
+.btn-1 {
+    padding: 10px 50px;
+    background-color: #E03C40;
+    color: #e2e2e2;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-1:hover {
+    background-color: #d12528;
+}
+
+.about {
+    padding: 100px 0;
+    background-color: #e5e5e5;
+}
+
+.about-content {
+    display: flex;
+}
+
+.about-1 {
+    width: 100%;
+}
+
+h3 {
+    padding-left: 80px;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #29242d;
+}
+
+h4 {
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #29242d;
+}
+
+p {
+    margin-bottom: 2px;
+    color: #838288;
+    padding-left: 80px;
+}
+
+.about-2 {
+    width: 200%;
+    padding-left: 300px;
+}
+
+.about-img {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.about-img img {
+    width: 110px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu .navbar ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-label {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .menu-icono {
+        display: block;
+    }
+
+    .menu.active .navbar ul {
+        display: flex;
+    }
+
+    .header-txt h1 {
+        font-size: 36px;
+    }
+
+    .header-txt p {
+        font-size: 20px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-1, .about-2 {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    h3, p, h4 {
+        padding-left: 20px;
+    }
+
+    .about-img {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .menu .navbar ul {
+        gap: 15px;
+    }
+
+    .header-txt h1 {
+        font-size: 42px;
+    }
+
+    .header-txt p {
+        font-size: 24px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-1, .about-2 {
+        width: 100%;
+        padding-left: 0;
+    }
+}

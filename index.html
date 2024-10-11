@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETLOVER</title>
+    <link rel="stylesheet" href="estilos/principal.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <div class="logo">
+                <ion-icon name="ionicons ion-map"></ion-icon>
+                <span>PETLOVER</span>
+            </div>
+
+            <div class="menu-opciones">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="mapa_marcadores.php">Mapa de busqueda</a>
+                    </li>
+                    <li>
+                        <a href="catalogo.php">Busca a tu mascota</a>
+                    </li>
+                    <li>
+                        <a href="registro_mascota.php">Registrar mascota</a>
+                    </li>
+                    <li>
+                        <a href="catalogo_adopciones.php">Adopciones</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="controles-usuario">
+                <button id="btn-sign-up">Regístrate</button>
+                <ion-icon id="btn-menu" name="menu"></ion-icon>
+            </div>
+            
+            
+        </div>
+    </header>
+    <main>
+        <section class="seccion-1">
+            <div class="texto">
+                <h1 class="titulo-principal">¿Cuál es el nombre de tu mascota?</h1>
+                    <form action="catalogo.php" method="GET" >
+                        <input type="text" name="nombre" placeholder="Ingresa el nombre de tu mascota" required>
+                        <button type="submit" class="btn-1">Buscar mascota</button>
+                    </form>
+                    </form>
+                </div>
+            </div>
+        </section>
+    <section class="about">
+        <div class="about-content">
+            <div class="about-1">
+                <h3>¿Comó encontramos tu mascota?</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                     Expedita unde laborum placeat. Neque veniam quibusdam 
+                     dolorum labore, quisquam minima dolore, impedit doloremque 
+                     vel corporis est velit distinctio voluptatibus, nihil 
+                     numquam!
+                </p>
+        <div class="about-2">
+            <h3>nuestro equipo</h3>
+            <div class="about-img">
+                <img src="Imagenes/valogo.png" alt="">
+                <div class="about-txt" >
+                    <h4> Valeria Fuentes Salcedo</h4>
+                    <p>Desarrollador de software</p>
+                    <p>Ingenieria de Sistemas</p>
+                </div>
+            </div>
+            <div class="about-img">
+                <img src="Imagenes/joseph.png" alt="">
+                <div class="about-txt" >
+                    <h4> Joseph Rojas</h4>
+                    <p>Desarrollador de software</p>
+                    <p>Ingenieria de Sistemas</p>
+                </div>
+            </div>
+                <div class="about-img">
+                    <img src="Imagenes/alejadnro.png" alt="">
+                    <div class="about-txt" >
+                        <h4>Alejandro Santana </h4>
+                        <p>Desarrollador de software</p>
+                        <p>Ingenieria de Sistemas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </section>
+</main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/scriptindex.js"></script>
+</body>
+</html>

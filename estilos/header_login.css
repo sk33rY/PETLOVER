@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --background-color: #eee4db;
+    --color-principal: rgb(218, 127, 61);
+    --color-texto: rgb(40, 39, 39);
+    --color-hover: rgb(11, 11, 11);
+    --color-titulo: rgb(0, 0, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* Encabezado */
+header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    color: var(--color-texto);
+    background-color: var(--background-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Logo normal (no responsive) */
+header .logo {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+header .logo ion-icon {
+    font-size: 35px;
+    color: var(--color-principal);
+    margin-right: 5px;
+}
+
+header .logo span {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-titulo);
+}
+
+/* Menú opciones */
+header .menu-opciones {
+    display: flex;
+    background-color: var(--background-color);
+    height: auto;
+}
+
+header .menu-opciones ul {
+    display: flex;
+    flex-direction: row;
+}
+
+header .menu-opciones li {
+    list-style: none;
+    margin: 15px;
+}
+
+header .menu-opciones a {
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+header .menu-opciones a:hover {
+    color: var(--color-principal);
+}
+
+/* Controles usuario */
+header .controles-usuario {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    order: 1;
+}
+
+header .controles-usuario ion-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--color-principal);
+}
+
+header .controles-usuario ion-icon:hover {
+    color: var(--color-hover);
+}
+/* Añadir estilo para los íconos de notificaciones y chats */
+.controles-usuario .icono {
+    font-size: 20px;
+    margin-right: 10px;
+    color: var(--color-principal);
+    transition: color 0.3s ease;
+}
+
+.controles-usuario .icono:hover {
+    color: var(--color-hover);
+}
+
+/* Ajustar el tamaño del ícono del usuario */
+.user-container ion-icon {
+    font-size: 40px;
+    cursor: pointer;
+    color: var(--color-principal);
+}
+
+.icono img {
+    width: 30px;
+    height: 30px;
+    background-color: transparent; /* Fondo transparente */            /* Para hacer los bordes circulares */
+    border: none;                   /* Quitar bordes si los hay */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icono img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
+/* Menú lateral para móviles */
+#menu-lateral {
+    display: none; /* Oculto por defecto en pantallas grandes */
+}
+
+.menu-lateral {
+    position: fixed;
+    left: -250px; /* Fuera del viewport inicialmente */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transform: translateX(-250px);
+    transition: transform 0.5s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.menu-lateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral ul li {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s ease;
+}
+
+.menu-lateral ul li:hover {
+    background-color: #444;
+}
+
+.menu-lateral ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Menú lateral activo */
+.menu-lateral.active {
+    transform: translateX(0);
+}
+
+/* Menú desplegable (inicialmente oculto) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--background-color);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--color-texto);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+
+.show {
+    display: block; /* Mostrar el menú cuando tiene la clase "show" */
+}
+
+/* Responsive: Cambios en pantallas pequeñas */
+@media (max-width: 865px) {
+    header .contenedor {
+        justify-content: space-between;
+    }
+
+    /* Menú de hamburguesa a la izquierda */
+    header #btn-menu {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: var(--color-principal);
+        margin-right: 15px;
+    }
+
+    /* Logo centrado */
+    header .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Ocultar el menú de opciones en pantallas pequeñas */
+    header .menu-opciones {
+        display: none;
+    }
+
+    /* Mostrar el menú lateral en pantallas pequeñas */
+    #menu-lateral {
+        display: block; /* Mostrar el menú lateral solo en pantallas pequeñas */
+    }
+
+    /* Controles usuario a la derecha */
+    header .controles-usuario {
+        position: absolute;
+        right: 10px;
+    }
+}
+
+/* Ajustes adicionales para pantallas más pequeñas */
+@media (max-width: 480px) {
+    header .logo span {
+        font-size: 18px;
+    }
+
+    header .logo ion-icon {
+        font-size: 30px;
+    }
+}
